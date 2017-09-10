@@ -12,7 +12,6 @@
  * @author Michael
  */
 class Student {
-    //put your code here
     
     // Constructor
     function __construct() {
@@ -22,14 +21,19 @@ class Student {
         $this->grades = array();
     }
     
+    // mutator function to add email
+    // $which states type of address, eg. home or work
+    // $address is actual email address
     function add_email($which, $address) {
         $this->emails[$which] = $address;
     }
 
+    // mutator function to add grade
     function add_grade($grade) {
         $this->grades[] = $grade;
     }
     
+    // calculates the average grade
     function average() {
         $total = 0;
         foreach ($this->grades as $value)
@@ -37,6 +41,7 @@ class Student {
         return $total / count($this->grades);
     }
     
+    // Shows how to print all information
     function toString() {
         $result = $this->first_name . ' ' . $this->surname;
         $result .= ' ('.$this->average().")\n";
